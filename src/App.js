@@ -1,44 +1,57 @@
 import { marked } from 'marked'
+import defaultText from './defaultText';
 import { React, useState } from 'react';
 import './App.css';
 
+
+
 function App() {
 
-  const [editorText, setEditorText] = useState('');
-  const [previewText, setPreviewText] = useState(marked.parse(editorText));
+  const [editorText, setEditorText] = useState(defaultText);
+  const [previewText, setPreviewText] = useState("");
 
-  async function handleEditorChange(e){
-    setEditorText(e.target.value);
-    setPreviewText(marked.parse(editorText))
+  function handleEditorChange(event){
+    setEditorText(event.target.value)
+    setPreviewText(event.target.value)
   }
-
-  function TextWindow({name, text}) {
-
-    const [isMaximised, setIsMaximised] = useState(false);
-
-    function Topbar({name}){
-      return (
-        <div className="topbar-wrap">
-          <h3>{name}</h3>
-        </div>
-      )
-    }
-
-    return (
-      <div className='textwindow-wrap'>
-        <Topbar name={name} />
-        <textarea disabled={name === "preview"} id={name} onChange={handleEditorChange} value={text}></textarea>
-      </div>
-    )
-  }
-
 
   return (
     <div className="App">
-      <TextWindow name="editor" text="Hello World" />
-      <TextWindow name="preview" text="#Hello World" />
+      <TextWindow name="editor" text={editorText} handleChange={handleEditorChange} />
+      <TextWindow text={previewText} name="preview" />
     </div>
   );
 }
+
+function TextWindow({name, text, handleChange}) {
+  if(name === "editor"){ 
+    return (<div className='editorWrap'>
+        <Topbar name={name} />
+        <textarea 
+        value={text} 
+        onChange={handleChange}>
+        </textarea>
+      </div>
+    )
+  } else {
+    return (
+        <div className='previewWrap'>
+      <Topbar name={name} />
+      marked.parse(text)
+  </div>
+    )
+  }
+}
+
+function Topbar ({name}){
+  return (
+    <div className='topbar-wrap'>
+      <h3>
+        {name}
+      </h3>
+    </div>
+  )
+}
+
 
 export default App;

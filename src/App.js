@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { marked } from 'marked'
+import { React, useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [editorText, setEditorText] = useState('');
+  const [previewText, setPreviewText] = useState(marked.parse(editorText));
+
+  async function handleEditorChange(e){
+    setEditorText(e.target.value);
+    setPreviewText(marked.parse(editorText))
+  }
+
+  function TextWindow({name, text}) {
+
+    const [isMaximised, setIsMaximised] = useState(false);
+
+    function Topbar({name}){
+      return (
+        <div className="topbar-wrap">
+          <h3>{name}</h3>
+        </div>
+      )
+    }
+
+    return (
+      <div className='textwindow-wrap'>
+        <Topbar name={name} />
+        <textarea disabled={name === "preview"} id={name} onChange={handleEditorChange} value={text}></textarea>
+      </div>
+    )
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TextWindow name="editor" text="Hello World" />
+      <TextWindow name="preview" text="#Hello World" />
     </div>
   );
 }

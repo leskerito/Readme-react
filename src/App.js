@@ -1,47 +1,56 @@
-import Markdown from 'react-markdown';
+import { marked } from 'marked'
+import defaultText from './defaultText';
 import { React, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [editorText, setEditorText] = useState(defaultText);
+  const [previewText, setPreviewText] = useState("");
 
-  const [editorText, setEditorText] = useState('');
-
-  function TextWindow({name, text}) {
+  function handleEditorChange(event){
+    setEditorText(event.target.value)
+    setPreviewText(event.target.value)
+  }
 
     // const [isMaximised, setIsMaximised] = useState(false);
 
-    function Topbar({name}){
-      return (
-        <div className="topbar-wrap">
-          <h3>{name}</h3>
-        </div>
-      )
-    }
-
-    return (
-      <div className='textwindow-wrap'>
-        <Topbar name={name} />
-        <textarea 
-          disabled={name === "preview"} 
-          id={name} 
-          onChange={(e) => {
-            setEditorText(e.target.value);
-            
-          }} 
-          value={name === 'preview' ? "" : text}>
-          {name === "preview" && <Markdown>{editorText}</Markdown>}
-        </textarea>
-      </div>
-    )
-  }
-
-
   return (
     <div className="App">
-      <TextWindow name="editor" text={editorText} />
-      <TextWindow name="preview" text="" />
+      <TextWindow name="editor" text={editorText} handleChange={handleEditorChange} />
+      <TextWindow text={previewText} name="preview" />
     </div>
   );
 }
+
+function TextWindow({name, text, handleChange}) {
+  if(name === "editor"){ 
+    return (<div className='editorWrap'>
+        <Topbar name={name} />
+        <textarea 
+        value={text} 
+        onChange={handleChange}>
+        </textarea>
+      </div>
+    )
+  } else {
+    return (
+        <div className='previewWrap'>
+      <Topbar name={name} />
+      marked.parse(text)
+  </div>
+    )
+  }
+}
+
+function Topbar ({name}){
+  return (
+    <div className='topbar-wrap'>
+      <h3>
+        {name}
+      </h3>
+    </div>
+  )
+}
+
 
 export default App;

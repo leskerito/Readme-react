@@ -1,11 +1,12 @@
-import { marked } from 'marked'
+import { marked } from 'marked';
+import * as DOMPurify from 'dompurify';
 import defaultText from './defaultText';
 import { React, useState } from 'react';
 import './App.css';
 
 function App() {
   const [editorText, setEditorText] = useState(defaultText);
-  const [previewText, setPreviewText] = useState("");
+  const [previewText, setPreviewText] = useState(editorText);
 
   function handleEditorChange(event){
     setEditorText(event.target.value)
@@ -23,10 +24,12 @@ function App() {
 }
 
 function TextWindow({name, text, handleChange}) {
+
   if(name === "editor"){ 
     return (<div className='editorWrap'>
         <Topbar name={name} />
-        <textarea 
+        <textarea
+        id={name} 
         value={text} 
         onChange={handleChange}>
         </textarea>
@@ -36,7 +39,8 @@ function TextWindow({name, text, handleChange}) {
     return (
         <div className='previewWrap'>
       <Topbar name={name} />
-      marked.parse(text)
+      <div id={name} dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked.parse(text.replace('n')))} }>
+      </div>
   </div>
     )
   }

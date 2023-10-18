@@ -2,31 +2,25 @@ import Topbar from './Topbar'
 import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 
-export default function TextWindow({name, text, handleChange}) {
+export default function TextWindow({name, text, handleChange, handleMaximised, handleVisible, isVisible, isMaximised}) {
 
+  const markedText = {
+    __html: DOMPurify.sanitize(marked.parse(text))
+  };
+
+  const ind = (name === "editor" ? 0 : 1)
 
   marked.use({
     breaks: true,
     gfm: true
   })
 
-    if(name === "editor"){ 
-      return (<div className='editorWrap'>
-          <Topbar name={name} />
-          <textarea
-          id={name} 
-          value={text} 
-          onChange={handleChange}>
-          </textarea>
-        </div>
-      )
-    } else {
-      return (
-          <div className='previewWrap'>
-        <Topbar name={name} />
-        <div id={name} dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked.parse(text))} }>
-        </div>
+  return (
+    <div hidden={isVisible}className={name + 'Wrap'}>
+      <Topbar name={name} index={ind} handleMaximised={handleMaximised} handleVisible={handleVisible}/>
+      {name === "editor" && <textarea id="editor" value={text} onChange={handleChange}/>}
+      {name === "preview" && <div id={name} dangerouslySetInnerHTML={markedText}></div>}
+      {console.log(document.getElementsByClassName(name + 'Wrap'))}
     </div>
-      )
-    }
-  }
+  )
+}

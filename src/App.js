@@ -3,6 +3,7 @@ import defaultText from './defaultText';
 import { React, useState } from 'react';
 import './App.css';
 
+
 function App() {
   const [editorText, setEditorText] = useState(defaultText);
   const [previewText, setPreviewText] = useState(editorText);

@@ -1,5 +1,4 @@
-import { marked } from 'marked';
-import * as DOMPurify from 'dompurify';
+import TextWindow from './TextWindow';
 import defaultText from './defaultText';
 import { React, useState } from 'react';
 import './App.css';
@@ -22,39 +21,5 @@ function App() {
     </div>
   );
 }
-
-function TextWindow({name, text, handleChange}) {
-
-  if(name === "editor"){ 
-    return (<div className='editorWrap'>
-        <Topbar name={name} />
-        <textarea
-        id={name} 
-        value={text} 
-        onChange={handleChange}>
-        </textarea>
-      </div>
-    )
-  } else {
-    return (
-        <div className='previewWrap'>
-      <Topbar name={name} />
-      <div id={name} dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(marked.parse(text.replace('n')))} }>
-      </div>
-  </div>
-    )
-  }
-}
-
-function Topbar ({name}){
-  return (
-    <div className='topbar-wrap'>
-      <h3>
-        {name}
-      </h3>
-    </div>
-  )
-}
-
 
 export default App;

@@ -4,15 +4,11 @@ import DOMPurify from 'dompurify'
 
 export default function TextWindow({name, text, handleChange}) {
 
-  const tokenizer = {
-    br(src = String){
-      console.log(src)
-      return 
-    }
-    
-  }
 
-  marked.use({ tokenizer })
+  marked.use({
+    breaks: true,
+    gfm: true
+  })
 
     if(name === "editor"){ 
       return (<div className='editorWrap'>

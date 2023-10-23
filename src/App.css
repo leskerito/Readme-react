@@ -1,8 +1,13 @@
+::webkit-scrollbar {
+  width: 1px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: #403b5c;
   color: white;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 a:visited {
@@ -11,15 +16,27 @@ a:visited {
 
 .editorWrap {
   padding: 10px;
-  height: 100%;
+  height: 100vh;
   width: calc(48% - 10px);
   display: inline-block;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  overflow: hidden;
   background-color: #403b5c;
+  border-right: 1px solid rgba(47, 44, 61, 0.6705882353);
+  background-color: #4e4b58;
+  box-shadow: 5px 0px 5px #343144;
 }
 
+.topbar-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .topbar-wrap h3 {
   color: grey;
   border: 1px 1px 0 1px;
+  border-color: red;
   display: inline;
   border-radius: 5px;
 }
@@ -27,7 +44,7 @@ a:visited {
 textarea {
   height: 90vh;
   width: 97%;
-  background-color: #403b5c;
+  background-color: #4e4b58;
   color: white;
   resize: none;
   overflow-x: hidden;
@@ -37,13 +54,18 @@ textarea {
 
 .previewWrap {
   padding: 10px;
-  height: 100%;
-  width: calc(50% - 10px);
+  height: 100vh;
+  width: calc(48% - 10px);
   display: inline-block;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+#preview {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 img {
   max-width: 50%;
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=App.css.map */

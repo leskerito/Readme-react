@@ -16,11 +16,11 @@ export default function TextWindow({name, text, handleChange, handleMaximised, h
   })
 
   return (
-    <div hidden={isVisible}className={name + 'Wrap'}>
+    <label htmlFor={name} hidden={isVisible}className={name + 'Wrap'}>
       <Topbar name={name} index={ind} handleMaximised={handleMaximised} handleVisible={handleVisible}/>
       {name === "editor" && <textarea id="editor" value={text} onChange={handleChange}/>}
       {name === "preview" && <div id={name} dangerouslySetInnerHTML={markedText}></div>}
       {console.log(document.getElementsByClassName(name + 'Wrap'))}
-    </div>
+    </label>
   )
 }

@@ -1,14 +1,15 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faX } from '@fortawesome/free-solid-svg-icons'
+import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons'
+import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons'
 
-export default function Topbar ({name, handleMaximised}){
+export default function Topbar ({name, handleMaximized, isMaximized}){
     return (
       <div className='topbar-wrap'>
         <h3>
           {name}
         </h3>
-        <FontAwesomeIcon icon={faX} onClick={handleMaximised} />
+        <FontAwesomeIcon icon={ isMaximized ? faDownLeftAndUpRightToCenter: faUpRightAndDownLeftFromCenter} onClick={handleMaximized} />
       </div>
     )
   }

@@ -22,8 +22,16 @@ function App() {
       console.log(whoIsMaximized, index)
       return;
     }
-    setWhoIsMaximized(index);
-    console.log(whoIsMaximized, index)
+    switch(index){
+      case 0:
+        setWhoIsMaximized(0);
+        setWhoIsVisible([true, false]);
+        break;
+      case 1:
+        setWhoIsMaximized(1);
+        setWhoIsVisible([false, true]);
+        break;
+    }
     return
   }
 

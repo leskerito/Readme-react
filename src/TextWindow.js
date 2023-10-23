@@ -15,7 +15,7 @@ export default function TextWindow({name, text, handleChange, handleMaximized, h
   })
 
   return (
-    <label htmlFor={name} hidden={isvisible} ismaximized={isMaximized} className={name + 'Wrap'}>
+    <label htmlFor={name} hidden={!isvisible} ismaximized={isMaximized} className={name + 'Wrap'}>
       <Topbar name={name} ismaximized={isMaximized} handleMaximized={handleMaximized} handleVisible={handleVisible}/>
       {name === "editor" && <textarea id="editor" value={text} onChange={handleChange}/>}
       {name === "editorMax" && <textarea id="editor" className='editorMax' value={text} onChange={handleChange}/>}

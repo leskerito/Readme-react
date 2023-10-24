@@ -15,6 +15,10 @@ body {
   overflow: hidden;
 }
 
+code {
+  background-color: #3b3242;
+}
+
 a:visited {
   color: black;
 }

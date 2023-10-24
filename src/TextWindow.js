@@ -14,8 +14,6 @@ export default function TextWindow({name, text, handleChange, handleMaximized, h
     gfm: true
   })
 
-  console.log(name, ismaximized)
-
   return (
     <label htmlFor={name} hidden={!isvisible} ismaximized={ismaximized} className={name + 'Wrap'}>
       <Topbar name={name.replace("Max", "")} ismaximized={ismaximized} handleMaximized={handleMaximized} handleVisible={handleVisible}/>

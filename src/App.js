@@ -37,8 +37,8 @@ function App() {
 
   return (
     <div className="App" id='App'>
-      {whoIsVisible[0] && <TextWindow isvisible={whoIsVisible[0]} ismaximized={whoIsMaximized === 0} handleMaximized={() => handleMaximized(0)} name={whoIsMaximized === 0 ? "editorMax" : "editor"} text={editorText} handleChange={handleEditorChange} /> }
-      {whoIsVisible[1] && <TextWindow isvisible={whoIsVisible[1]} ismaximized={whoIsMaximized === 1} handleMaximized={() => handleMaximized(1)} text={previewText} name={whoIsMaximized === 1 ? "previewMax" : "preview"} /> }
+      {whoIsVisible[0] && <TextWindow isvisible={whoIsVisible[0]} ismaximized={whoIsMaximized === 0 ? 'true' : 'false'} handleMaximized={() => handleMaximized(0)} name={whoIsMaximized === 0 ? "editorMax" : "editor"} text={editorText} handleChange={handleEditorChange} /> }
+      {whoIsVisible[1] && <TextWindow isvisible={whoIsVisible[1]} ismaximized={whoIsMaximized === 1 ? 'true' : 'false'} handleMaximized={() => handleMaximized(1)} text={previewText} name={whoIsMaximized === 1 ? "previewMax" : "preview"} /> }
     </div>
   );
 }

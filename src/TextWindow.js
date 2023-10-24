@@ -2,7 +2,7 @@ import Topbar from './Topbar'
 import { marked } from 'marked'
 import DOMPurify from 'dompurify'
 
-export default function TextWindow({name, text, handleChange, handleMaximized, handleVisible, isvisible, isMaximized}) {
+export default function TextWindow({name, text, handleChange, handleMaximized, handleVisible, isvisible, ismaximized}) {
 
   //Adding the parsed text in a sanitized variable
   const markedText = {
@@ -14,9 +14,11 @@ export default function TextWindow({name, text, handleChange, handleMaximized, h
     gfm: true
   })
 
+  console.log(name, ismaximized)
+
   return (
-    <label htmlFor={name} hidden={!isvisible} ismaximized={isMaximized} className={name + 'Wrap'}>
-      <Topbar name={name} ismaximized={isMaximized} handleMaximized={handleMaximized} handleVisible={handleVisible}/>
+    <label htmlFor={name} hidden={!isvisible} ismaximized={ismaximized} className={name + 'Wrap'}>
+      <Topbar name={name.replace("Max", "")} ismaximized={ismaximized} handleMaximized={handleMaximized} handleVisible={handleVisible}/>
       {name === "editor" && <textarea id="editor" value={text} onChange={handleChange}/>}
       {name === "editorMax" && <textarea id="editor" className='editorMax' value={text} onChange={handleChange}/>}
       {name === "preview" && <div id={name} dangerouslySetInnerHTML={markedText}></div>}

@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Real-time Markdown Parser in React 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+___
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project was written in the context of the [freeCodeCamp](https://freeCodeCamp.org/) curriculum and is fully written using React. 
+It is a real time github-flavored markdown parser. Nothing fancy. 
 
-### `npm start`
+Don't wanna brag but I wrote this Readme with it, just *__bee-tee-dubs__*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To launch this app properly, you should have a relatively modern browser (Chrome, Edge, Safari, Firefox, Opera...) although most of the CSS and JS used should work with everything. 
 
-### `npm test`
+A recent version of Nodejs and npm is also required to launch the project (made with version 10.2.0).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+If all goes according to plan, you just have to run __`npm start`__ in the project directory and everything should just play along.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upon launching the project correctly, you will be faced with two sides.
+The left side is the editor and is where you'll be writing down your Markdown. 
+By default, it contains some Markdown text as a test but feel free to change it. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On top, next to the window's titles, you'll see an icon. This icon lets you expand (or minimize) the respective window. More on how that was done in the **How I made it** section. 
 
-### `npm run eject`
+## How I made it
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Languages used:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - HTML 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ - Javascript (react, JSX)
+  
+- CSS (Sass recompiled)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project is centered around two js components, `TextWindow.js` and `Topbar.js`. I'm hoping that their names are pretty self explanatory. 
 
-## Learn More
+The subtlety lies in the props and states used. **_still not bragging_**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Both `TextWindow`

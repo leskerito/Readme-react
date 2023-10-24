@@ -33,13 +33,67 @@ a:visited {
   box-shadow: 5px 0px 5px #343144;
 }
 
-.topbar-wrap {
+.editorMaxWrap {
+  padding: 10px;
+  height: 100vh;
+  width: calc(48% - 10px);
+  display: inline-block;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  background-color: #403b5c;
+  border-right: 1px solid rgba(47, 44, 61, 0.6705882353);
+  background-color: #4e4b58;
+  box-shadow: 5px 0px 5px #343144;
+  width: 100%;
+  text-align: center;
+  background-color: #575463;
+}
+.editorMaxWrap .topbar-wrap {
   display: flex;
   justify-content: space-between;
+  margin: auto;
+  width: 80vh;
+  color: #b8adc4;
+}
+.editorMaxWrap .topbar-wrap h3 {
+  color: #b8adc4;
+  border: 1px 1px 0 1px;
+  border-color: red;
+  display: inline;
+  border-radius: 5px;
+}
+.editorMaxWrap textarea {
+  width: 50%;
+  margin: auto;
+  background-color: #575463;
+  color: #f8eefd;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: none;
+}
+
+.previewMaxWrap {
+  padding: 10px;
+  height: 100vh;
+  width: calc(48% - 10px);
+  display: inline-block;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  max-width: 80vw;
+  margin: 0 auto;
+  font-size: 1.4em;
+}
+
+.topbar-wrap {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
+  padding: 0 5vw 0 5vw;
 }
 .topbar-wrap h3 {
-  color: grey;
+  color: #a8a8a8;
   border: 1px 1px 0 1px;
   border-color: red;
   display: inline;

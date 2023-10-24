@@ -19,7 +19,6 @@ function App() {
     if(whoIsMaximized !== -1){
       setWhoIsMaximized(-1);
       setWhoIsVisible([true, true]);
-      console.log(whoIsMaximized, index)
       return;
     }
     switch(index){
@@ -30,6 +29,8 @@ function App() {
       case 1:
         setWhoIsMaximized(1);
         setWhoIsVisible([false, true]);
+        break;
+      default:
         break;
     }
     return

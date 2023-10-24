@@ -12,13 +12,12 @@ export default function Topbar ({name, handleMaximized, ismaximized}){
     setMax(!max)
   }
 
-  console.log("Topbar: ", name, ismaximized)
     return (
       <div className='topbar-wrap'>
         <h3>
           {name}
         </h3>
-        <FontAwesomeIcon icon={ max ? faUpRightAndDownLeftFromCenter : faDownLeftAndUpRightToCenter} onClick={topbarMaximize} />
+        <FontAwesomeIcon size='lg' icon={ max ? faUpRightAndDownLeftFromCenter : faDownLeftAndUpRightToCenter} onClick={topbarMaximize} />
       </div>
     )
   }

@@ -33,12 +33,20 @@ On top, next to the window's titles, you'll see an icon. This icon lets you expa
 
   - HTML 
 
- - Javascript (react, JSX)
+  - Javascript (react, JSX)
   
-- CSS (Sass recompiled)
+  - CSS (Sass recompiled)
 
 The project is centered around two js components, `TextWindow.js` and `Topbar.js`. I'm hoping that their names are pretty self explanatory. 
 
 The subtlety lies in the props and states used. **_still not bragging_**
 
-Both `TextWindow`
+Both `TextWindow` change depending on their `name` and if they've been Maximized or not. 
+
+I would love to explain the project in more detail so please ask if you feel like talking about it!
+
+## Thanks
+
+The [React.dev](https://react.dev/learn) documentation as it actually is an amazing ressource to learn (up-to-date!) React.
+
+freeCodeCamp which enables me to actually learn to code instead of procrastinate on learning watching Youtube Videos!

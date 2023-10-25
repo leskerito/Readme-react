@@ -13,11 +13,10 @@ export default function Topbar ({name, handleMaximized, ismaximized}){
   }
 
     return (
-      <div className='topbar-wrap'>
+      <div className='topbar-wrap'  onClick={topbarMaximize}>
         <h3>
           {name}
         </h3>
-        <FontAwesomeIcon className="icon" size='lg' icon={ max ? faUpRightAndDownLeftFromCenter : faDownLeftAndUpRightToCenter} onClick={topbarMaximize} />
       </div>
     )
   }

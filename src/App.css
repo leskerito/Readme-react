@@ -27,8 +27,8 @@ a:visited {
   padding: 10px;
   height: 100vh;
   width: calc(48% - 10px);
-  display: inline-block;
   overflow-y: auto;
+  display: inline-block;
   overflow-wrap: break-word;
   overflow: hidden;
   background-color: #403b5c;
@@ -41,8 +41,8 @@ a:visited {
   padding: 10px;
   height: 100vh;
   width: calc(48% - 10px);
-  display: inline-block;
   overflow-y: auto;
+  display: inline-block;
   overflow-wrap: break-word;
   overflow: hidden;
   background-color: #403b5c;
@@ -82,10 +82,12 @@ a:visited {
   padding: 10px;
   height: 100vh;
   width: calc(48% - 10px);
-  display: inline-block;
   overflow-y: auto;
+  display: inline-block;
   overflow-wrap: break-word;
-  max-width: 80vw;
+  text-align: center;
+  width: 100vw;
+  padding: 0 10vw 0 10vw;
   margin: 0 auto;
   font-size: 1.4em;
 }
@@ -119,14 +121,24 @@ textarea {
   padding: 10px;
   height: 100vh;
   width: calc(48% - 10px);
-  display: inline-block;
   overflow-y: auto;
+  display: inline-block;
   overflow-wrap: break-word;
 }
 
 #preview {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.icon {
+  transition: color 0.2s;
+}
+.icon:hover {
+  color: #352c2c;
+}
+.icon:active {
+  color: #000000;
 }
 
 img {

@@ -17,7 +17,7 @@ export default function Topbar ({name, handleMaximized, ismaximized}){
         <h3>
           {name}
         </h3>
-        <FontAwesomeIcon size='lg' icon={ max ? faUpRightAndDownLeftFromCenter : faDownLeftAndUpRightToCenter} onClick={topbarMaximize} />
+        <FontAwesomeIcon className="icon" size='lg' icon={ max ? faUpRightAndDownLeftFromCenter : faDownLeftAndUpRightToCenter} onClick={topbarMaximize} />
       </div>
     )
   }

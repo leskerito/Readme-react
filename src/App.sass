@@ -4,8 +4,8 @@ $scrollbar: "::-webkit-scrollbar"
     padding: 10px
     height: 100vh
     width: calc(48% - 10px)
-    display: inline-block
     overflow-y: auto
+    display: inline-block
     overflow-wrap: break-word
 
 @mixin editorStyle()
@@ -73,7 +73,9 @@ a:visited
 
 .previewMaxWrap
     @include previewStyle
-    max-width: 80vw
+    text-align: center
+    width: 100vw
+    padding: 0 10vw 0 10vw
     margin: 0 auto
     font-size: 1.4em
 
@@ -109,5 +111,14 @@ textarea
     overflow-x: hidden
     overflow-y: auto
 
+.icon
+    transition: color 0.2s
+    
+    &:hover
+        color: #352c2c
+        
+    &:active
+        color: #000000
+    
 img
     max-width: 50%

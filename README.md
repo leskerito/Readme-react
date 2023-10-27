@@ -17,7 +17,7 @@ A recent version of Nodejs and npm is also required to launch the project (made 
 
 ## Installation
 
-If all goes according to plan, you just have to run __`npm start`__ in the project directory and everything should just play along.
+If all goes according to plan, you just have to run __`npm install`__ after cloning the repo then __`npm start`__ in the project directory and everything should just play along.
 
 ## Usage
 
